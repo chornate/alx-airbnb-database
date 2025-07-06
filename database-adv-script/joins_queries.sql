@@ -1,26 +1,26 @@
-select 
+SELECT 
     b.booking_id,
     b.property_id,
     b.booking_date,
     u.user_id,
-    u.name as user_name
-from bookings as b
-inner join users as u on b.user_id = u.user_id;
+    u.name AS user_name
+FROM bookings AS b
+INNER JOIN users AS u ON b.user_id = u.user_id;
 
-select 
+SELECT 
     p.property_id,
     p.property_name,
     r.review_id,
     r.rating,
     r.comment
-from properties as p
-left join reviews as r on p.property_id = r.property_id;
+FROM properties AS p
+LEFT JOIN reviews AS r ON p.property_id = r.property_id;
 
-select 
+SELECT 
     u.user_id,
-    u.name as user_name,
+    u.name AS user_name,
     b.booking_id,
     b.property_id,
     b.booking_date
-from users as u
-full outer join bookings as b on u.user_id = b.user_id;
+FROM users AS u
+FULL OUTER JOIN bookings AS b ON u.user_id = b.user_id;
