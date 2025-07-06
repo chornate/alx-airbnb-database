@@ -14,4 +14,6 @@ CREATE TABLE bookings_partitioned
     start_date DATE,
     end_date DATE,
     booking_date DATE
-) ON bookingDateRangePS(start_date);
+) 
+ON bookingDateRangePS(start_date)
+PARTITION BY RANGE (start_date);
